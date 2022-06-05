@@ -1,0 +1,9 @@
+A player should be able to:
+
+[X] Enter a sentence
+[X] See the longest word in a sentence
+[X] See the shortest word in a sentence
+[X] To show the sum of the length of all words in a sentence
+[X] To show all that ends  with letter that the longest word ends with
+[X] To display the last letter for the longest word
+

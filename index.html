@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="./src/css/bootstrap.min.css">
+   <link rel="stylesheet" href="./src/css/style.css">
+   <title>Alpine Word Game</title>
+   <script defer src="/dist/app.js"></script>
+
+</head>
+
+<body>
+   <div x-data="wordsGameData()">
+      <div class="container">
+         <h2 class="d-flex justify-content-center mt-4" x-text="title"></h2>
+         <div class="row mt-5 justify-content-center">
+            <div class="card">
+               <div class="mt-4 ml-4 mb-4">
+                  <div class="filters d-flex mr-3">
+                     <div class="form-radio mr-5">
+                        <input class="form-radio-input" type="radio" name="myRadio" value="longest" x-model="checkedVal">
+                        <label class="form-radio-label" for="radio">
+                           Longest
+                        </label>
+                     </div>
+                     <div class="form-radio mr-5">
+                        <input class="form-radio-input" type="radio" name="myRadio" value="shortest" x-model="checkedVal">
+                        <label class="form-radio-label" for="radio">
+                           Shortest
+                        </label>
+                     </div>
+                     <div class="form-radio mr-5">
+                        <input class="form-radio-input" type="radio" name="myRadio" value="length" x-model="checkedVal">
+                        <label class="form-radio-label" for="checkbox">
+                           Length
+                        </label>
+                     </div>
+                     <div class="form-radio mr-5">
+                        <input class="form-radio-input" type="radio" name="myRadio" value="most" x-model="checkedVal">
+                        <label class="form-radio-label" for="radio">
+                           Most words
+                        </label>
+                     </div>
+                  </div>
+                  <div>
+                     <form class="form-inline mt-3">
+                        Sentence:
+                        <div class="form-group mx-sm-3">
+                           <label for="sentence" class="sr-only">Sentence</label>
+                           <input type="text" class="form-control" id="sentence" placeholder="Enter your sentence"
+                              x-model="sentenceInput">
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="mb-4">
+                  <span class="ml-4" x-text="sentenceInput"></span>
+               </div>
+               <div class="itemsElem mb-4" x-show="checkedVal == 'most'" x-transition>
+                  <template x-for="word in mostWordsList">
+                     <span class="itemElem ml-4">
+                        <span x-text="word"></span>
+                     </span>
+                  </template>
+               </div>
+               <div class="message mt-4" x-show="checkedVal != ''" x-transition>
+                  <template x-if="showMsg">
+                     <h3 class="alert alert-info" role="alert" x-text="message">
+                     </h3>
+                  </template>
+               </div>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+
+
+
+   <script defer src="./src/js/jquery.js"></script>
+   <script defer src="./src/js/bootstrap.min.js"></script>
+   <script>
+      function wordsGameData() {
+         return {
+            title: 'Words Game',
+            words: [],
+            checkedVal: '',
+            message: '',
+            sentenceInput: '',
+            mostWordsList: [],
+            longestWord(sentence) {
+                  let wordLength = 0;
+                  let longWord = '';
+                  this.words = sentence.split(' ');
+                  
+                  for(word of this.words) {
+                     if(word.length >= wordLength) {
+                        wordLength = word.length;
+                        longWord = word;
+                     }
+                  }
+                  return longWord;
+            },
+            shortestWord(sentence) {
+                  let wordLength = 100;
+                  let shortWord = '';
+                  this.words = sentence.split(' ');
+               
+                  for(word of this.words) {
+                     if(wordLength >= word.length ) {
+                        wordLength = word.length;
+                        shortWord = word;
+                     }
+                  }
+                  return shortWord;
+            },
+            totalLength(sentence) {
+               let total = 0;
+               this.words = sentence.split(' ');
+               
+               for(word of this.words) {
+                  total += word.length;
+               }
+               return total;
+            },
+            mostWords(sentence) {
+               let wordLength = 0;
+               let longWord = '';
+               this.words = sentence.split(' ');
+               
+               for(word of this.words) {
+                  if(word.length >= wordLength) {
+                     wordLength = word.length;
+                     longWord = word;
+                  }
+               }
+               let lastLetter = longWord[longWord.length - 1]
+               let filtered = this.words.filter(word => word.endsWith(lastLetter));
+               let wordsObj = { lastLetter, wordsArr: filtered }
+            
+               return wordsObj;
+            },
+            showMsg() {
+               if(this.checkedVal == 'longest') {
+                  this.message = 'Longest word is: ' + this.longestWord(this.sentenceInput);
+               } else if(this.checkedVal == 'shortest') {
+                  this.message = 'Shortest word is: ' + this.shortestWord(this.sentenceInput);
+               } else if(this.checkedVal == 'length') {
+                  this.message = 'Length of all words is: ' + this.totalLength(this.sentenceInput);
+               } else if(this.checkedVal == 'most') {
+                  this.message = 'Last letter is: ' + this.mostWords(this.sentenceInput).lastLetter;;
+                  this.mostWordsList = this.mostWords(this.sentenceInput).wordsArr;
+               }
+               return true;
+            },
+         }
+      }
+   </script>
+</body>
+
+</html>

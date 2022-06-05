@@ -1,0 +1,38 @@
+body {
+    background-color: #219ebc;;
+    font-family: sans-serif;
+  }
+  
+  .card {
+    width: 70%;
+    height: auto;
+  }
+
+  .itemElem {
+    background: #219ebc;
+    border: #fff solid 1px;
+    border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    font-weight: 700;
+  }
+
+  .message {
+    text-align:center; 
+    margin: 0em 1em 0em 1em;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 600px) {
+    .card {
+      width: 90%;
+    }
+
+  }
+
+
+  
+
