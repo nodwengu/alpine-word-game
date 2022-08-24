@@ -1,0 +1,174 @@
+body {
+    background-color: aliceblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+​
+.pizzas {
+    border-radius: 1em;
+    background-color: orange;
+    padding: 1em;
+    margin: 1em;
+}
+
+@media (min-width:600px) {
+    body {
+        background-color: firebrick;
+    }
+}
+
+@media (min-width:960px) {
+    body {
+        background-color: firebrick;
+    }
+
+}
+.box {
+    border: 1em solid darkorchid;
+    width: 10%;
+    padding: 2em 1em 2em 0em;
+}
+​
+.box1 {
+    border: 1px solid lightblue;
+    width: 10px;
+    padding: 2em 1em 2em 0em;
+}
+​
+.header {
+    padding: 1em;
+    background-color: palevioletred;
+    display: flex;
+    border-radius: 0.5em;
+}
+
+h1 {
+    /*padding: 1em; */
+    /*border-radius: 0.25em; */
+}
+h1 {
+    /*padding: 1em; */
+    /*background-color: lightcoral; */
+}
+​
+span {
+    border: 1px solid;
+    /*background-color: lightgreen; */
+    /*padding: 1em; */
+    /*margin: 1em; */
+}
+​
+.input {
+    margin: 1em;
+}
+​
+.link {
+    background-color: lightcoral;
+    width: 15em;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 0.5em;
+    /* text-align:center; */
+}
+​
+.link:hover {
+    background-color: crimson;
+}
+​
+​
+.cart-box {
+    display: flex;
+    justify-content: flex-end;
+}
+​
+ .cart {
+    background-color: palevioletred;
+    /* margin: 0.5em; */
+    padding: 1em;
+    width: 100%;
+    margin-top: -10em;
+    border-radius: 0.5em;
+ } 
+​
+ table{
+    border-collapse: collapse;
+    width: 100%;
+ }
+​
+ td{
+    text-align: center;
+    vertical-align: bottom;
+    /* height: 50px; */
+ }
+​
+ th,
+ td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #ccc;
+ }
+​
+ .f1 {
+    flex: 1
+ }
+​
+ .f3 {
+    flex: 3;
+ }
+​
+ .message {
+    padding: 1em;
+    /* color: grey */
+    font-weight: bold;
+    background-color: gold;
+ }
+​
+​
+​
+​
+​
+​
+​
+.medium {
+    border: 1em;
+    background-color: palevioletred;
+    padding: 1em;
+    margin: 1em;
+    color: brown;
+}
+​
+.large {
+    border: 1em;
+    background-color: palevioletred;
+    padding: 1em;
+    margin: 1em;
+    color: brown;
+}
+​
+.small {
+    border: 1em;
+    background-color: palevioletred;
+    padding: 1em;
+    margin: 1em;
+    color: brown;
+}
+​
+.Contact Us {
+    background-color: rebeccapurple;
+
+}
+​
+.heading {
+    background-color: greenyellow;
+}
+​
+.pic Align {
+    text-align: right;
+}
+​
+    .pizzas {
+        display: flex;
+        border-radius: 1em;
+        background-color: pi;
+        padding: 1em;
+        margin: 1em;
+    }

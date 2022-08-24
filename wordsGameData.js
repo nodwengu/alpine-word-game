@@ -1,5 +1,6 @@
 function wordsGameData() {
    return {
+      showMsg: false,
       title: 'Words Game',
       words: [],
       checkedVal: '',

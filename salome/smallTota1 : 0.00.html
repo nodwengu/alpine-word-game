@@ -1,0 +1,54 @@
+smallTota1 : 0.00,
+smallQty : 0, 
+mediumTotal : 0.00, 
+mediumQty : 0,
+largeTotal : 0.00,
+largeQty : 0,
+payNow : false,
+paymentAmount : 0,
+paymentMessage : '',
+
+buySmall() {
+    this.smallTotal += 39.99;
+    this.smallQty +=1
+},
+buyMedium() {
+    this.mediumTotal += 79.99;
+    this.mediumQty +=1
+},
+buyLarge() {
+    this.largeTotal += 149.99;
+    this.largeQty +=1 
+},   
+clearSmall() {
+    if (this.smallQty > 0) {
+        this.smallTotal -= 39.99; 
+        this.smallQty -=1
+    }
+clearMedium() {
+    if (this.mediumQty > 0) {
+        this.mediumTotal -= 79.99; 
+        this.mediumQty -=1
+    }
+clearlarge() {
+    if (this.largeQty > 0) {
+        this.largeTotal -= 149.99; 
+        this.largeQty -=1
+    }        
+},
+cartTotal() {
+    // let locaTotal = 1000;
+    return this.smallTotal + this.mediumTotal +this.largeTotal ;
+},
+totalQty() {
+    return this.smallQty + this.mediumQty + this.largeQty
+},
+
+clearCart() {
+    this.smallTotal = 0.00;
+    this.smallQty = 0; 
+    this.mediumTotal = 0.00; 
+    this.mediumQty = 0;
+    this.largeTotal = 0.00;
+    this.largeQty = 0;   
+}

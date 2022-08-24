@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="//unpkg.com/alpinejs" defer></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script> -->
+
+    <script defer src="../dist/app.js"></script>
+</head>
+​
+<body>
+    <div class="container">
+        <div class="header" >
+            <div class="f3">
+                <h1>For the Love of Delicious Perfect Pizza </h1>
+    
+                <img src="https://th.bing.com/th/id/OIP.hda_jnJZ_8Vl40iq0dP39wHaHN?w=213&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" alt="" width="40" >
+                <img src="https://www.bing.com/th?id=ATOOL90B8AE9C7F541AC3358FE6D01CF48B2760134AB3CD5A9FF8C5B91B7904CA049D&w=120&h=120&c=7&rs=1&qlt=80&o=6&dpr=1.25&pid=SANGAM" alt="" width="40" >
+                <img src="https://imgix.bustle.com/uploads/image/2018/4/27/349b1bf5-c3ee-450d-a355-4b82e8a8988a-double-cheesy-crust-pan-pizza-01.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format%2Ccompress&cs=srgb&q=70" alt="" width="40" >
+        
+                <small>Inspired by <a href="https://www.bing.com/images/search?q=Pizza&form=IQFRML&first=1&tsc=ImageHoverTitle">Pizza&form</a> </small>
+            </div>
+​
+            <div class="f1" >
+                    <button ><img src="./images/shopping-cart.png" width="30" alt="">Show cart </button>
+                    <!-- <strong x-show="totalQty() > 0" ><span x-text="totalQty()" ></span> pizzas in the cart.</strong> -->
+            </div>
+        </div>
+        <!-- <div class="cart-box">
+            <div class="cart"  x-show="showCart" >
+                <div>
+                    <button x-on:click="showCart=false" >
+                    <img src="./images/shopping-cart.png" width="30" alt=""> Close cart </button>
+                </div>    
+                <div class="">
+                    <h2>Cart
+                    <img src="./images/shopping-cart.png" width="30" alt=""> 
+                </h2>   
+        </div> -->
+    <!-- <table>
+    
+    <tr x-show="smallQty > 0" >
+        
+        <td>Small Pizza</td>
+            <td  >
+            <span x-text="smallQty" ></span>
+            <button x-on:click="buySmall" x-show="smallQty > 0" >+</button>
+            <button x-on:click="clearSmall" x-show="smallQty > 0" >-</button>
+        </td>
+        <td>
+            R<span x-text="smallTotal.toFixed(2)"></span>
+        </td>    
+    </tr>
+    <tr x-show="mediumQty > 0" >
+        <td>Medium Pizza</td>
+        <td>
+            <span x-text="mediumQty" ></span>
+            <button>+</button>
+            <button>-</button>
+        </td>
+        <td>
+            R<span x-text="mediumTotal.toFixed(2)" ></span>
+        </td>
+    </tr>
+    <tr x-show="largeQty" >
+        <td>Large Pizza</td>
+        <td>
+            <span x-text="largeQty" ></span>
+            <button>+</button>
+            <button>-</button>
+        </td>
+        <td>
+            R<span x-text="largeTotal.toFixed(2)" ></span>
+        </td>
+    </tr>
+    <tr x-show="cartTotal() > 0 " >
+        <td colspan="2">Total</td>
+        <td>
+            R<span x-text="cartTotal().toFixed(2)" ></span>
+        </td>
+    </tr>
+    
+    <tr   >   
+        
+        <td colspan="2">
+​
+            <div x-show="payNow" >
+                <div class="message" x-text="paymentMessage"  ></div>
+                </div>
+                    <label for="">Payment amount</label>
+                    <input class="input" type="number" placeholder="Payment amount" x-model="paymentAmount" >
+                    <button x-on:click="make Payment" class="btn" ><img src="./images/shopping-cart.png" width="20" alt="">Pay now</button>
+            </div>
+            <div>
+                <div x-text="paymentAmount" ></div> 
+            </div>
+            </div>    
+        </td>
+    <tr>
+        <button x-show="payNow" x-on:click="payNow=true" close="btn" ><img src="./images/shopping-cart.png" width="20" alt="">Pay</button>
+    </td>
+    </tr>    
+</table> -->       
+​
+    <!-- <div class="pizzas">
+​
+​
+        <div class="small">
+            <img src="https://th.bing.com/th/id/OIP.hda_jnJZ_8Vl40iq0dP39wHaHN?w=213&h=207&c=7&r=0&o=5&dpr=1.25&pid=1.7" 
+            width="95" class="picAlign"> 
+            <h2>Small Pizza</h2>
+            <h3>R39.99</h3>
+            <button class="buy btn" x-on:click="buySmall" >
+                 
+            Buy</button>
+​
+            <div>
+​
+​
+                Small pizza with 3 toppings, 1 meat topping and 3 or less other toppings.
+            </div>
+        </div>
+        <div class="pizzas">
+​
+        <div class="medium">
+            <img src="https://www.bing.com/th?id=ATOOL90B8AE9C7F541AC3358FE6D01CF48B2760134AB3CD5A9FF8C5B91B7904CA049D&w=120&h=120&c=7&rs=1&qlt=80&o=6&dpr=1.25&pid=SANGAM"
+                width="155">
+​
+            <h2>Medium Pizza</h2>
+            <h3>R79.99</h3>
+            <button class="buy btn" x-on:click="buyMedium" >
+                
+                Buy</button>
+    
+​
+            <div>
+​
+​
+                Medium margeritha pizza with 3 toppings max, 2 or less meat topping and 3 or less other toppings.
+            </div>
+        </div>
+        <div class="large">
+            <img src="https://imgix.bustle.com/uploads/image/2018/4/27/349b1bf5-c3ee-450d-a355-4b82e8a8988a-double-cheesy-crust-pan-pizza-01.jpg?w=1020&h=574&fit=crop&crop=faces&auto=format%2Ccompress&cs=srgb&q=70"
+            width="245">
+            <h2>Large Pizza</h2>
+            <h3>R139.99</h3>
+            <button class="buy btn" x-on:click="buyLarge" >
+                
+                Buy</button>
+       
+            <div>
+​
+​
+                Large margeritha pizza with 3 toppings max, 3 meat toppings max and 3 or less other toppings.
+            </div>
+        </div>
+​
+​
+    </div>
+    <div class="Contact_Us">
+        <h2>Contact Details</h2>
+        Contact No. 011-788-0486 Email: pizzaperfect@gmail.co.za
+    </div> -->
+​
+​</div>
+
+</body>
+</html>
